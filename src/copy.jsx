@@ -3,43 +3,38 @@ import React, { useState } from "react";
 function DoubleSlider() {
   const [leftSignInPanel, setLeftSignInPanel] = useState("");
   const [leftSignUpPanel, setLeftSignUpPanel] = useState("hidden");
-  const [rightSignInPanel, setRightSignInPanel] = useState("-translate-x-1/5");
-  const [rightSignUpPanel, setRightSignUpPanel] = useState("");
-  const [rightBG, setRightBG] = useState("translate-x-0");
+  const [rightSignInPanel, setRightSignInPanel] = useState("hidden");
+  const [rightSignUpPanel, setRightSignUpPanel] = useState("translate-x-0");
   const handleSignup = (e) => {
     e.preventDefault();
-    setLeftSignInPanel("translate-x-0");
-    setLeftSignUpPanel("translate-x-0 opacity-0");
-    setRightSignUpPanel("translate-x-0");
-    setRightSignInPanel("translate-x-full opacity-0");
-    setRightBG("translate-x-0");
+    // setLeftSignInPanel("transform translate-x-full bg-white z-10");
+    // setLeftSignUpPanel("hidden");
+    // setRightSignUpPanel("");
+    // setRightSignInPanel("hidden");
   };
 
   const handleSignin = (e) => {
     e.preventDefault();
-    setLeftSignUpPanel("translate-x-full");
-    setLeftSignInPanel("hidden");
-    setRightSignUpPanel("hidden");
-    setRightSignInPanel("translate-x-full z-10");
-    setRightBG("-translate-x-full");
+    setLeftSignUpPanel("");
+    setLeftSignInPanel("translate-x-full z-10");
+    setRightSignUpPanel("-translate-x-full bg-red-500 z-30");
+    // setRightSignInPanel("");
   };
 
   const handleRightSignup = (e) => {
     e.preventDefault();
-    setLeftSignInPanel("hidden");
-    setLeftSignUpPanel("translate-x-full z-20");
-    setRightSignUpPanel("hidden");
-    setRightSignInPanel("translate-x-full z-10");
-    setRightBG("-translate-x-full");
+    setLeftSignInPanel("translate-x-full z-10");
+    setLeftSignUpPanel("");
+    setRightSignUpPanel("-translate-x-full bg-red-500 z-50");
+    setRightSignInPanel("");
   };
 
   const handleRightSignin = (e) => {
     e.preventDefault();
-    setLeftSignUpPanel("-translate-x-full");
-    setLeftSignInPanel("-hidden");
-    setRightSignUpPanel("translate-x-0");
+    setLeftSignUpPanel("hidden");
+    setLeftSignInPanel("");
+    setRightSignUpPanel("");
     setRightSignInPanel("hidden");
-    setRightBG("translate-x-0");
   };
 
   return (
@@ -52,7 +47,7 @@ function DoubleSlider() {
         id="container"
       >
         <div
-          className={`absolute ${leftSignUpPanel} transform left-0 w-1/2 top-0 h-full transition duration-600 ease-in-out`}
+          className={`absolute w-2/5 top-0 h-full ${leftSignUpPanel} transition duration-500 ease-in-out`}
         >
           <form
             className="flex flex-col px-8 h-full items-center text-center justify-center"
@@ -85,17 +80,17 @@ function DoubleSlider() {
               or use your email for registration
             </span>
             <input
-              className="my-2 bg-gray-200 w-full text-md px-3 leading-7"
+              className="my-2 bg-gray-200 w-4/5 text-md px-3 leading-7"
               type="text"
               placeholder="Name"
             />
             <input
-              className="my-2 bg-gray-200 w-full text-md px-3 leading-7"
+              className="my-2 bg-gray-200 w-4/5 text-md px-3 leading-7"
               type="email"
               placeholder="Email"
             />
             <input
-              className="my-2 bg-gray-200 w-full text-md px-3 leading-7"
+              className="my-2 bg-gray-200 w-4/5 text-md px-3 leading-7"
               type="password"
               placeholder="Password"
             />
@@ -163,11 +158,11 @@ function DoubleSlider() {
         {/* Overlay */}
 
         <div
-          className={`${rightBG}  transform overlay-container font-sans absolute top-0 left-1/2 w-1/2 h-full overflow-hidden transition duration-500 ease-in-out`}
+          className={`${rightSignUpPanel} transform overlay-container font-sans absolute top-0 left-1/2 w-1/2 h-full overflow-hidden transition duration-500 ease-in-out`}
         >
           <div className="overlay relative transition duration-500 ease-in-out transform translate-x-0 -left-full h-full w-2full bg-gradient-to-r from-yellow-400 via-red-400 to-pink-400">
             <div
-              className={`${rightSignInPanel} transform overlay-panel transition duration-500 ease-in-out text-center justify-center items-center h-full py-4 w-1/2 absolute top-0 flex flex-col overlay-left`}
+              className={`${rightSignInPanel} transform overlay-panel -translate-x-1/5 transition duration-500 ease-in-out text-center justify-center items-center h-full py-4 w-1/2 absolute top-0 flex flex-col overlay-left`}
             >
               <h1 className="mx-auto mt-20 font-bold text-3xl text-white text-center">
                 Welcome Back!
@@ -182,9 +177,7 @@ function DoubleSlider() {
                 Sign In
               </button>
             </div>
-            <div
-              className={`${rightSignUpPanel} translate-x-0 transformm absolute top-0 right-0 overlay-panel transition duration-500 ease-in-out text-center justify-center items-center h-full w-1/2 flex flex-col overlay-right`}
-            >
+            <div className="translate-x-0 transformm absolute top-0 right-0 overlay-panel transition duration-500 ease-in-out text-center justify-center items-center h-full w-1/2 flex flex-col overlay-right">
               <h1 className="mx-auto mt-20 text-white font-bold text-3xl text-center">
                 Hello, Friend
               </h1>
