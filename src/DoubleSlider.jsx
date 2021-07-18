@@ -43,16 +43,16 @@ function DoubleSlider() {
   };
 
   return (
-    <div className="flex flex-col justify-center min-w-4/5 h-screen items-center -mx-10 font-sans bg-gray-100 text-gray-800">
+    <div className="flex flex-col justify-center h-screen items-center -mx-10 font-sans text-gray-800">
       <h2 className="mx-auto justify-center text-xl py-5 font-bold">
         Sign in/up Double Slider
       </h2>
       <div
-        className="relative w-4/5 overflow-hidden mx-w-full h-4/5 container rounded-md shadow-lg bg-white px-10"
+        className="relative w-1/2 overflow-hidden mx-w-full h-4/5 container rounded-md shadow-lg bg-white px-10"
         id="container"
       >
         <div
-          className={`absolute ${leftSignUpPanel} transform left-0 w-1/2 top-0 h-full transition duration-600 ease-in-out`}
+          className={`absolute ${leftSignUpPanel} transform left-0 w-1/2 top-0 h-full transition duration-800 ease-in-out`}
         >
           <form
             className="flex flex-col px-8 h-full items-center text-center justify-center"
@@ -85,17 +85,17 @@ function DoubleSlider() {
               or use your email for registration
             </span>
             <input
-              className="my-2 bg-gray-200 w-full text-md px-3 leading-7"
+              className="my-2 bg-gray-200 w-4/5 rounded-lg text-md px-3 leading-7"
               type="text"
               placeholder="Name"
             />
             <input
-              className="my-2 bg-gray-200 w-full text-md px-3 leading-7"
+              className="my-2 bg-gray-200 w-4/5 rounded-lg text-md px-3 leading-7"
               type="email"
               placeholder="Email"
             />
             <input
-              className="my-2 bg-gray-200 w-full text-md px-3 leading-7"
+              className="my-2 bg-gray-200 w-4/5 rounded-lg text-md px-3 leading-7"
               type="password"
               placeholder="Password"
             />
@@ -108,7 +108,7 @@ function DoubleSlider() {
           </form>
         </div>
         <div
-          className={`absolute ${leftSignInPanel} transform left-0 w-1/2 top-0 h-full transition duration-600 ease-in-out`}
+          className={`absolute ${leftSignInPanel} transform left-0 w-1/2 top-0 h-full transition duration-800 ease-in-out`}
         >
           <form
             className="flex flex-col px-16 h-full items-center text-center justify-center"
@@ -139,12 +139,12 @@ function DoubleSlider() {
               or use your account
             </span>
             <input
-              className="my-2 bg-gray-200 w-full text-md px-3 leading-7"
+              className="my-2 bg-gray-200 w-full rounded-lg text-md px-3 leading-7"
               type="email"
               placeholder="Email"
             />
             <input
-              className="my-2 bg-gray-200 w-full text-md px-3 leading-7"
+              className="my-2 bg-gray-200 w-full rounded-lg text-md px-3 leading-7"
               type="password"
               placeholder="Password"
             />
@@ -163,11 +163,11 @@ function DoubleSlider() {
         {/* Overlay */}
 
         <div
-          className={`${rightBG}  transform overlay-container font-sans absolute top-0 left-1/2 w-1/2 h-full overflow-hidden transition duration-500 ease-in-out`}
+          className={`${rightBG}  transform overlay-container font-sans absolute top-0 left-1/2 w-1/2 h-full overflow-hidden transition duration-800 ease-in-out`}
         >
           <div className="overlay relative transition duration-500 ease-in-out transform translate-x-0 -left-full h-full w-2full bg-gradient-to-r from-yellow-400 via-red-400 to-pink-400">
             <div
-              className={`${rightSignInPanel} transform overlay-panel transition duration-500 ease-in-out text-center justify-center items-center h-full py-4 w-1/2 absolute top-0 flex flex-col overlay-left`}
+              className={`${rightSignInPanel} transform overlay-panel transition duration-800 ease-in-out text-center justify-center items-center h-full py-4 w-1/2 absolute top-0 flex flex-col overlay-left`}
             >
               <h1 className="mx-auto mt-20 font-bold text-3xl text-white text-center">
                 Welcome Back!
@@ -183,7 +183,7 @@ function DoubleSlider() {
               </button>
             </div>
             <div
-              className={`${rightSignUpPanel} translate-x-0 transformm absolute top-0 right-0 overlay-panel transition duration-500 ease-in-out text-center justify-center items-center h-full w-1/2 flex flex-col overlay-right`}
+              className={`${rightSignUpPanel} translate-x-0 transformm absolute top-0 right-0 overlay-panel transition duration-800 ease-in-out text-center justify-center items-center h-full w-1/2 flex flex-col overlay-right`}
             >
               <h1 className="mx-auto mt-20 text-white font-bold text-3xl text-center">
                 Hello, Friend
